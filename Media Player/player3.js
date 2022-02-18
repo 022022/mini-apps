@@ -7,7 +7,7 @@ const timeline = document.querySelector('.timeline');
 const progressBar = document.querySelector('.progress')
 
 const showVolume = document.querySelector('.showVolume');
-let volumeNum = document.querySelector('.volumeNum'); 		
+let volumeNum = document.querySelector('.volumeNum'); 			//????
 const volumeline = document.querySelector('.volumeline');
 const currentVolume = document.querySelector('.currentVolume');
 const volumeBlock = document.querySelector('.volume-block');
