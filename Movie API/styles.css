@@ -1,0 +1,81 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+html { 
+  background: black; 
+  background-size: cover;
+}
+
+body {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+}
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+
+.container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+.movie-container{
+	margin-bottom: 32px;
+}
+
+.movie{
+	width: 300px;
+}
+
+
+.search{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 32px;
+	width: 80%;
+	min-width: 400px;
+}
+
+.search > *{
+	margin: 16px;
+}
+
+.search > input{
+	flex-grow: 1;
+}
+
+.search > input:nth-child(1){
+	margin-right: 32px;
+}
+
+.message{
+	display: block;
+}
+
+.quote{
+	margin-top: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.random-quote{
+	text-align: center;
+}
+
+.the-quote{
+	max-width: 800px;
+	font-size: 20px;
+	font-style: italic;
+}
