@@ -1,0 +1,57 @@
+
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
+    min-height: 100vh;
+    margin: 0; padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+header{
+    margin: auto;
+}
+
+.main-container{
+    height: 600px;
+    background-color: rgb(35, 13, 75);
+}
+
+.rocket{
+    width: 170px;
+    height: 100px;
+    background-image: url(./assets/images/rocket.png);
+    background-size: contain;
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+
+.asteroid{
+    width: 76px;
+    height: 76px;
+    background-image: url(./assets/images/asteroid.png);
+    background-size: contain;
+    position: relative;
+    top: 100px;
+    left: 1000px;    
+    animation: asterAnimation 1s infinite linear;
+}
+
+@keyframes asterAnimation {
+    0% {
+        left: 1000px;    
+    }
+    100% {
+        left: 0px;
+    }
+}
