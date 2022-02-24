@@ -113,10 +113,8 @@ function drawBricks() {
     bricks.map((column, columnIndex) =>
         column.map((brick, brickIndex) => {
             if (brick.status === 1) {
-                brick.x =
-                    columnIndex * (brickWidth + brickPadding) + brickOffsetLeft;
-                brick.y =
-                    brickIndex * (brickHeight + brickPadding) + brickOffsetTop;
+                brick.x = columnIndex * (brickWidth + brickPadding) + brickOffsetLeft;
+                brick.y = brickIndex * (brickHeight + brickPadding) + brickOffsetTop;
                 ctx.beginPath();
                 ctx.rect(brick.x, brick.y, brickWidth, brickHeight);
                 ctx.fillStyle = '#0095DD';
@@ -151,12 +149,7 @@ function detectCollision() {
         for (let r = 0; r < brickRowCount; r++) {
             let b = bricks[c][r];
             if (b.status === 1) {
-                if (
-                    x > b.x - ballRadius &&
-                    x < b.x + brickWidth + ballRadius &&
-                    y > b.y - ballRadius &&
-                    y < b.y + brickHeight + ballRadius
-                ) {
+                if (x > b.x - ballRadius && x < b.x + brickWidth + ballRadius && y > b.y - ballRadius && y < b.y + brickHeight + ballRadius) {
                     b.status = 0;
                     dy = -dy;
 

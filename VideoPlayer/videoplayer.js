@@ -5,58 +5,50 @@ const volumeSlider = document.querySelector('.volume-slider');
 const rateSlider = document.querySelector('.rate-slider');
 const timelineSlider = document.querySelector('.timeline-slider');
 
-
-const video = document.createElement("video");
+const video = document.createElement('video');
 video.src = './assets/video/dinner.mp4';
 container.appendChild(video);
 changeVolume();
 changeRate();
 
-
-function playPauseVideo(){
-	if (video.paused){		
-		video.play();	
-		playBtn.innerHTML = "❚ ❚"
-	}
-	else{
-		video.pause();
-		playBtn.innerHTML = "►";
-	}	
+function playPauseVideo() {
+    if (video.paused) {
+        video.play();
+        playBtn.innerHTML = '❚ ❚';
+    } else {
+        video.pause();
+        playBtn.innerHTML = '►';
+    }
 }
 
-
-
-function skip(event){
-	video.currentTime = video.currentTime + Number(event.target.dataset.skip);
+function skip(event) {
+    video.currentTime = video.currentTime + Number(event.target.dataset.skip);
 }
 
-
-
-function changeVolume(){
-	video.volume = volumeSlider.value;	
-	const currentVolume = volumeSlider.value*100;
-	updateThumb(volumeSlider, currentVolume);
+function changeVolume() {
+    video.volume = volumeSlider.value;
+    const currentVolume = volumeSlider.value * 100;
+    updateThumb(volumeSlider, currentVolume);
 }
 
-function changeRate(){
-	video.playbackRate = rateSlider.value;
-	const currentRate = rateSlider.value*100/2;
-	updateThumb(rateSlider, currentRate);
+function changeRate() {
+    video.playbackRate = rateSlider.value;
+    const currentRate = (rateSlider.value * 100) / 2;
+    updateThumb(rateSlider, currentRate);
 }
 
-function updateTimeline(){	
-	const progress = (video.currentTime / video.duration) * 100;
-	timelineSlider.value = progress;
-	updateThumb(timelineSlider, progress);
+function updateTimeline() {
+    const progress = (video.currentTime / video.duration) * 100;
+    timelineSlider.value = progress;
+    updateThumb(timelineSlider, progress);
 }
 
-function updateThumb(target, value){
-	target.style.background = `linear-gradient(to right, #82CFD0 ${value}%, #fff ${value}%)`
+function updateThumb(target, value) {
+    target.style.background = `linear-gradient(to right, #82CFD0 ${value}%, #fff ${value}%)`;
 }
 
-
-function seek(event){	
-	video.currentTime = event.offsetX/timelineSlider.clientWidth * video.duration;
+function seek(event) {
+    video.currentTime = (event.offsetX / timelineSlider.clientWidth) * video.duration;
 }
 
 playBtn.addEventListener('click', playPauseVideo);

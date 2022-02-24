@@ -1,47 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Audio Player</title>
-		<link rel="stylesheet" href="styles.css">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Audio Player</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="playlist-block"></div>
 
-	</head>
-	<body>
-	
-		<div class='playlist-block'> </div>
-	
-		<div class='controls'>
-			
-			<div class="playcontrols">
-				<button class="backward"></button>
-				<button class="play-btn"></button>
-				<button class="forward"></button>
-			</div>
-			
-			<button class="showVolume"></button>
-			
-			<div class="volume-block">
-				<div class="volumeline">
-					<div class="currentVolume"></div>
-				</div>
-				<div class="volumeNum"></div>
-			</div>
-		</div>
-		
-		<div class='timeline-block'>
-			<div class="durationNum"></div>
+        <div class="controls">
+            <div class="playcontrols">
+                <button class="backward"></button>
+                <button class="play-btn"></button>
+                <button class="forward"></button>
+            </div>
 
-					
-			<div class="timeline">
-				<div class="progress"></div>
-			</div>
-		</div>
+            <button class="showVolume"></button>
 
+            <div class="volume-block">
+                <div class="volumeline">
+                    <div class="currentVolume"></div>
+                </div>
+                <div class="volumeNum"></div>
+            </div>
+        </div>
 
-		<script src="./player3.js"></script>
-	</body>
+        <div class="timeline-block">
+            <div class="durationNum"></div>
 
+            <div class="timeline">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        <script src="./player3.js"></script>
+    </body>
 </html>
-
-
-

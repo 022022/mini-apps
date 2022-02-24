@@ -9,6 +9,8 @@ export async function getQuote() {
 
 function addQuote(data) {
     const randomNum = Math.round(Math.random() * (data.length - 1));
-    const quote = `<p class="the-quote">${data[randomNum].quote}</p><p>${(data[randomNum].author) ? data[randomNum].author : ''} (${data[randomNum].source})</p>`
+    const quote = `<p class="the-quote">${data[randomNum].quote}</p><p>${data[randomNum].author ? data[randomNum].author : ''} (${
+        data[randomNum].source
+    })</p>`;
     randomQuote.insertAdjacentHTML('beforeend', quote);
 }

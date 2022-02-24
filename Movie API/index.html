@@ -1,45 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Movie API</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet" />
+    </head>
 
-<head>
-	<meta charset="UTF-8">
-	<title>Movie API</title>
-	<link rel="stylesheet" href="styles.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
-</head>
+    <body>
+        <div class="wrapper">
+            <h1>Movie Search</h1>
 
-<body>
+            <div class="search">
+                API Key to Use
+                <input type="search" class="api-key" name="name" autocomplete="off" placeholder="Введите ключ API (TMDB API)" autofocus />
 
+                Search by
+                <input type="search" class="search-word" name="name" autocomplete="off" placeholder="Введите слово для поиска" />
 
+                <button class="search-button">Search</button>
+            </div>
 
-	<div class="wrapper">
-		<h1>Movie Search</h1>
+            <div class="container">Введите ключ API, слово, по которому хотите искать и нажмите кнопку</div>
 
+            <div class="quote">
+                <p>While you're thinking, here's a movie quote for you</p>
+                <div class="random-quote"></div>
+            </div>
+        </div>
 
-		<div class="search">
-			API Key to Use
-			<input type="search" class="api-key" name="name" autocomplete='off' placeholder="Введите ключ API (TMDB API)"
-				autofocus>
-
-			Search by
-			<input type="search" class="search-word" name="name" autocomplete='off' placeholder="Введите слово для поиска">
-
-
-			<button class="search-button"> Search </button>
-
-		</div>
-
-		<div class="container">Введите ключ API, слово, по которому хотите искать и нажмите кнопку</div>
-
-		<div class="quote">
-			<p>While you're thinking, here's a movie quote for you</p>
-			<div class="random-quote"></div>
-		</div>
-
-	</div>
-
-	<script type="module" src="./movieapi.js"></script>
-</body>
-
+        <script type="module" src="./movieapi.js"></script>
+    </body>
 </html>
