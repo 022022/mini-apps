@@ -13,16 +13,19 @@ rocket.height = parseInt(window.getComputedStyle(rocket).height);
 asteroid.width = parseInt(window.getComputedStyle(asteroid).width);
 asteroid.height = parseInt(window.getComputedStyle(asteroid).height);
 
+function assignAsteroidTop() {
+    asteroid.style.top = -50 + (Math.random() * 250) + 'px';
+}
+
 function moveShip(event) {
+    rocket.style.top = event.clientY - 100 + 'px';
 
-    rocket.style.top = (event.clientY-100) + 'px';
-
-    if (parseInt(rocket.style.top) >= parseInt(window.getComputedStyle(mainContainer).height) - 100){
+    if (parseInt(rocket.style.top) >= parseInt(window.getComputedStyle(mainContainer).height) - 100) {
         rocket.style.top = '300px';
     }
-    if (parseInt(rocket.style.top) < 0){
+    if (parseInt(rocket.style.top) < 0) {
         rocket.style.top = '0px';
-    }   
+    }
 }
 
 function detectCollision() {
@@ -32,21 +35,19 @@ function detectCollision() {
     let rocketX = parseInt(window.getComputedStyle(rocket).left) + rocket.width;
     let rocketYTop = parseInt(window.getComputedStyle(rocket).top);
     let rocketYBottom = parseInt(window.getComputedStyle(rocket).top) + rocket.height;
-  
 
     if (asteroidX < rocketX && asteroidX > 0 && asteroidY >= rocketYTop - rocket.height && asteroidY <= rocketYBottom - rocket.height) {
         rocket.classList.add('shake');
         scoreNum++;
-        score.textContent = 'Damage: '+scoreNum + '/1000';
-        if (scoreNum >= 1000){            
-            mainContainer.textContent = "Sorry, you lost :((( ";
-            clearTimeout(timer);
+        score.textContent = 'Damage: ' + scoreNum + '/1000';
+        if (scoreNum >= 1000) {
+            mainContainer.textContent = 'Sorry, you lost :((( ';
+            clearInterval(timer);
+            clearInterval(asteroidTimer);
         }
-    }
-    else {
+    } else {
         rocket.classList.remove('shake');
     }
 }
 let timer = setInterval(detectCollision, 1);
-
-
+let asteroidTimer = setInterval(assignAsteroidTop, 1000);
